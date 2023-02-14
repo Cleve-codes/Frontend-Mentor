@@ -1,0 +1,96 @@
+
+
+body {
+    background-color: bisque;
+    height: auto;
+}
+
+#card {
+    display: flex;
+    align-items: center;
+    box-shadow: 3px 5px 3px  black;
+    width: 750px;
+    height: 550px;
+    justify-self: center;
+    align-self: center;
+    margin-left: 30%;
+    margin-top: 10%;
+}
+#card .card-image {
+    width: 50%;
+    float:left;
+    height: 100%;
+}
+#card .card-content {
+    float: left;
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+}
+.attribution {
+    justify-content: flex-end;
+    position: fixed;
+    align-self: flex-end;
+    bottom: 0;
+    justify-self: flex-end;
+}
+.left {
+    width: 50%;
+    float: left;
+}
+.card-head {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    padding-left: 10px;
+    text-decoration: none;
+    color: darkgray;
+}
+.card-item {
+    font-family: 'Monstserrat', 'Fraunces';
+    font-size: 60px;
+}
+.card-details {
+    color: darkgrey;
+    font-size: 20px;
+}
+.list {
+    list-style-type: none;
+    
+}
+.list li {
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+ .price {
+    color: hsl(158, 36%, 37%);
+    font-family:  'Fraunces';
+    font-size: 30px;
+    float: left;
+}
+button {
+    background-color: hsl(158, 36%, 37%);
+    width: 70%;
+    height: auto;
+    border: 0px;
+    border-radius: 10px;
+}
+button i {
+    color: white;
+    vertical-align: middle;
+    align-self: center;
+    justify-content: center;
+    margin-left: 15%;
+    bottom: 0;
+}
+button span {
+    color: white;
+    text-align: center;
+    font-family: 'Fraunces', 'Monstserrat';
+    vertical-align: middle;
+    font-size: 14px;
+}
+#card:hover {
+    transform: scale(.9);
+}
