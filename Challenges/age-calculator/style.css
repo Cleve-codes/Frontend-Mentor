@@ -82,3 +82,7 @@ ul li{
     transition: 1s;
     background-color: hsl(0, 0%, 8%);
 }
+
+.hidden{
+    display: none;
+}
