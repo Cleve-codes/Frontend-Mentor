@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout */
+body{
+    background-color: hsl(235, 18%, 26%);
+}
+
+/* Container */
+.container{
+    display: flex;
+    margin-top: 10%;
+    margin-left: 15%;
+    background-color: white;
+    max-width: 660px;
+    max-height: 520px;
+    border-radius: 15px;
+    padding: 2.5em;
+}
+
+.left h2{
+    padding: 1em;
+}
+
+.left p{
+    padding: 1em;
+}
