@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400;1,700&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins';
 }
 
 body{
@@ -12,9 +15,6 @@ span{
     color: hsl(259, 100%, 65%);
 }
 
-hr{
-    opacity: .5;
-}
 
 .container {
     max-width: 570px;
@@ -51,10 +51,34 @@ ul li{
 /* line */
 .line{
     margin-top: 3.5em;
+    display: flex;
+    justify-content: space-between;
 } 
 
+.h-line{
+    width: 80%;
+    height: .04em;
+    color: black;
+}
 
 /* Age display */
 .ageDisplay{
     font-size: 4em;
+    font-style: italic;
+}
+
+/* Check Age button */
+.check-age{
+    padding: .5em;
+    background-color: hsl(259, 100%, 65%);
+    border-radius: 50%;
+    right: 0;
+    width: 26px;
+    color: white;
+}
+
+.check-age:hover{
+    transform: scale(1.1);
+    transition: 1s;
+    background-color: hsl(0, 0%, 8%);
 }
