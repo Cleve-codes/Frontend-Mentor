@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 *{
+    font-family: 'Roboto';
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -13,18 +16,94 @@ body{
 .container{
     display: flex;
     margin-top: 10%;
-    margin-left: 15%;
+    margin-left: 30%;
     background-color: white;
-    max-width: 660px;
-    max-height: 520px;
+    max-width: 860px;
+    max-height: 720px;
     border-radius: 15px;
     padding: 2.5em;
+    /* align-items: center; */
+    justify-content: center;
+
+}
+
+.left{
+    padding-right: 1.325em;
 }
 
 .left h2{
     padding: 1em;
+    margin-top: 25%;
 }
 
 .left p{
+    padding-bottom: 1em;
+}
+
+ul li{
+    list-style-type: none
+}
+
+.email-form{
+    margin-top: 7%;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    margin-top: 1em;
+    margin-bottom: 1em;
     padding: 1em;
+    border-radius: 15px;
+    box-shadow: .5px .5px 2px 2px  hsl(231, 7%, 60%);
+}
+
+.button{
+    padding: 1em;
+    border-radius: 15Px;
+    
+    color: white;
+}
+
+/* Success Container */
+.success-container{
+    background-color: white;
+    width: 270px;
+    height: 280px;
+    margin-top: 15%;
+    margin-left: 40%;
+    border-radius: 15px;
+    padding: 2em;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.success-container img{
+    margin-bottom: .5em;
+    width: 29px;
+}
+
+.success-container h2{
+    font-size: 29px;
+    margin-bottom: .5em;
+}
+
+.success-container p {
+    font-size: 11px;
+    margin-bottom: .75em;
+}
+
+
+.subscribe{
+    background-color: hsl(231, 7%, 60%);
+}
+
+.dismiss{
+    background-color: hsl(4, 100%, 67%);
+    width: 100%
+}
+
+.hidden{
+    display: none;
 }

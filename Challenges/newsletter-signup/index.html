@@ -14,6 +14,8 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -52,27 +54,37 @@
   </div> -->
 
   <!-- Container -->
-  <div class="container">
+  <div class="container hidden">
     <div class="left">
       <div>
           <h2>Stay updated!</h2>
           <p>Join 60,000+ product managers receiving monthly updates on:</p>
           <ul>
     
-            <li>Product discovery and building what matters</li>
-            <li>Measuring to ensure updates are a success</li>
-            <li>And much more!</li>
+            <li><img src="assets/images/icon-list.svg" alt="">  &nbsp;Product discovery and building what matters</li>
+            <li><img src="assets/images/icon-list.svg" alt=""> &nbsp;Measuring to ensure updates are a success</li>
+            <li><img src="assets/images/icon-list.svg" alt=""> &nbsp;And much more!</li>
       </div>
-      <div>
+      <div class="email-form">
         <form action="">Email address</form>
         <input type="email" name="" id="" placeholder="email@company.com">
-        <button>Subscribe to monthly newsletter</button>
+        <button class="button subscribe">Subscribe to monthly newsletter</button>
       </div>
-      </ul>
     </div>
     <div class="right">
-      <img src="design/leftside.png" alt="">
+      <img src="assets/images/illustration-sign-up-desktop.svg">
     </div>
   </div>
+
+  <!-- Success Container -->
+  <div class="success-container">
+    <img src="assets/images/icon-success.svg" alt="">
+    <h2>Thanks for <br> Subscribing !</h2>
+    <p>A confirmation email has been sent to <b>ash@loremcompany.com.</b> 
+      Please open it and click the button inside to confirm your subscription.</p>
+    <button class="button dismiss">Dismiss message</button>
+  </div>
+
+
 </body>
 </html>
