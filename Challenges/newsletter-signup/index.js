@@ -11,7 +11,7 @@
 */
 
 // Global UI components
-const inputEmail = document.querySelector('.email')
+const inputEmail = document.getElementById('email')
 const primaryContainer = document.querySelector('.container')
 const secondaryContainer = document.querySelector('.success-container')
 
@@ -37,11 +37,16 @@ const display = function(el){
 subscribeBtn.addEventListener('click', function(e){
     e.preventDefault();
     if(inputEmail.value === "clevemomanyi@gmail.com") {
+        // Hide primary container then display the secondary one
         hide(primaryContainer)
         display(secondaryContainer)
-        inputEmail.value = ''
+    } else{
+        alert('Incorrect password. Try again')
     }
-})
+        //Clear email input field
+        inputEmail.value = ''
+    });
+      
 
 // Returning to primary container on dismiss btn click
 dismissBtn.addEventListener('click', function(){
