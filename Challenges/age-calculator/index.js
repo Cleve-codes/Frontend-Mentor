@@ -1,8 +1,8 @@
 /* Global Variables */
 // Inputs
-const inputDate = document.querySelector('.date');
-const inputMonth = document.querySelector('.month');
-const inputYear = document.querySelector('.year');
+const selectDate = document.querySelector('.date');
+const selectMonth = document.querySelector('.month');
+const selectYear = document.querySelector('.year');
 // console.log(inputDate, inputMonth, inputYear)
 
 const years = document.querySelector('.years')
@@ -12,32 +12,42 @@ const months = document.querySelector('.months')
 
 const checkAgeBtn = document.querySelector('.check-age')
 const ageDisplay = document.querySelector('.ageDisplay')
-const yearInMs = 365*24*60*60*1000
+const currentYear = new Date().getFullYear()
 
 // Convert time into seconds
 const now = Number(new Date());
 // console.log(now, typeof now);
 
-// INitial states
-years.value = months.value = days.months = '00'
+
+////////////////////////////////////////////////////////////////////////////////////
+// Initial states
+// Function to Generate Options
+
+const generateOptions = function(start, end, element){
+  for(let i = start; i <= end; i++){
+    const option = document.createElement('option');
+    option.text = i;
+    option.value = i;
+    element.appendChild(option)
+  }
+}
+
+generateOptions(1, 31, selectDate);
+generateOptions(1, 12, selectMonth);
+generateOptions(1990, currentYear, selectYear)
 
 
-// AddEventlistener 
+
+// AddEventlistener to get inputs
 checkAgeBtn.addEventListener('click', function(e){
     e.preventDefault();
 
 
-    // Get the entered date values
-  const date = parseInt(inputDate.value, 10);
-  const month = parseInt(inputMonth.value, 10) - 1; // Months are zero-based
-  const year = parseInt(inputYear.value, 10);
+  // Get the entered date values
+  const date = parseInt(selectDate.value, 10);
+  const month = parseInt(selectMonth.value, 10) - 1; // Months are zero-based
+  const year = parseInt(selectYear.value, 10);
 
-  // Validate the entered date
-  if (isNaN(year) || isNaN(month) || isNaN(date) || date < 1 || date > 31 || month < 0 || month > 11) {
-    alert('Invalid date! Please enter a valid date.');
-    inputDate.value = inputMonth.value = inputYear.value = '';
-    return;
-  }
 
   // Create a new Date object with the entered date
   const birthDay = new Date(year, month, date);
@@ -45,7 +55,6 @@ checkAgeBtn.addEventListener('click', function(e){
   // Check if the entered date is in the future
   if (birthDay > new Date()) {
     alert('Invalid date! Please enter a date in the past.');
-    inputDate.value = inputMonth.value = inputYear.value = '';
     return;
   }
 
@@ -69,14 +78,5 @@ checkAgeBtn.addEventListener('click', function(e){
 
     ageDisplay.insertAdjacentHTML('afterbegin', html)
 
-    // Clear Input fields
-    inputDate.value = inputMonth.value = inputYear.value = '';
 })
 
-
-/*
-    24*60*60*1000 = 1 day in Ms
-    1 year = 365*24*60*60*1000
-
-    1 month = 
-*/

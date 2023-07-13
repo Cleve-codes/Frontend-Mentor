@@ -18,10 +18,10 @@ span{
 
 .container {
     max-width: 570px;
-    min-height: 450px;
+    min-height: 350px;
     background-color: hsl(0, 0%, 100%);
     margin-top: 10%;
-    margin-left: 15%;
+    margin-left: 35%;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -32,11 +32,12 @@ span{
 /* Birth-date input */
 .inputField {
     display: flex;
-    gap: 1.25em;
+    justify-content: space-between;
+    /* padding: 1em; */
 }
 
-input{
-    min-width: 3.5em;
+select{
+    min-width: 100%;
     min-height: 3em;
     text-align: center;
     font-weight: bolder;
@@ -50,21 +51,18 @@ ul li{
 
 /* line */
 .line{
-    margin-top: 3.5em;
+    margin-top: .5em;
     display: flex;
     justify-content: space-between;
 } 
 
-.h-line{
-    width: 80%;
-    height: .04em;
-    color: black;
-}
 
 /* Age display */
 .ageDisplay{
     font-size: 4em;
     font-style: italic;
+    border-top: 1px solid black;
+    margin-right: 5%;
 }
 
 /* Check Age button */
@@ -73,13 +71,13 @@ ul li{
     background-color: hsl(259, 100%, 65%);
     border-radius: 50%;
     right: 0;
-    width: 26px;
+    width: 30px;
     color: white;
 }
 
 .check-age:hover{
     transform: scale(1.1);
-    transition: 1s;
+    transition: .5s;
     background-color: hsl(0, 0%, 8%);
 }
 
