@@ -23,7 +23,7 @@ body {
 /* side section */
 .side-section{
     background-image: url('assets/images/bg-sidebar-desktop.svg');
-    width: 40%;
+    min-width: 40%;
     background-repeat: no-repeat;
     background-size: contain;
     min-height: 100%;
@@ -113,9 +113,17 @@ button:hover{
     background-color: hsl(213, 96%, 18%);
     color: white;
     text-align: center;
-    
 }
 
+.next:hover{
+    background-color: hsl(206, 94%, 87%);
+    color: black;
+    border: none;
+}
+
+.left{
+    margin-left: 60%;
+}
 /* Back button */
 .back{
     color: black;
@@ -270,4 +278,27 @@ ul li{
 
 .change{
     text-decoration: underline;
+}
+
+/* Success Container */
+.success{
+    margin-top: 12%;
+    width: 80%;
+    text-align: center;
+    margin-right: 20%;
+    padding: 1em;
+    font-size: larger;
+}
+
+.success img{
+    margin-bottom: 1em;
+}
+
+.success h2{
+    margin-bottom: 1em;
+}
+
+.active{
+    background-color: hsl(206, 94%, 87%);
+    color: black;
 }
