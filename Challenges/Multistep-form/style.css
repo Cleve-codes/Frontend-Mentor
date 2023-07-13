@@ -59,4 +59,52 @@ aside{
     color: black;
     transition: .5s;
     border: none;
+    cursor: pointer;
+}
+
+/* //////////////////////////////////////////// */
+/* Main content section */
+.main-content{
+    margin-top: 4em;
+}
+
+.header{
+    margin-bottom: 1.25em;
+}
+
+.header h2{
+    font-size: 2.5em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 1.5em;
+    height: 3em;
+}
+
+.btn{
+    display: flex;
+    margin-top: 6em;
+}
+
+button{
+    width: 170px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    text-align: center;
+    margin-left: 70%;
+    bottom: 0;
+    right: 0;
+    align-items: right;
+    justify-content: flex-end;
+}
+
+button:hover{
+    cursor: pointer;
 }
