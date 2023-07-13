@@ -108,7 +108,39 @@ button:hover{
     cursor: pointer;
 }
 
+/* Next button */
+.next{
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    text-align: center;
+    
+}
 
+/* Back button */
+.back{
+    color: black;
+    text-align: center;
+    border: none;
+}
+
+.back:hover{
+    background-color: hsl(354, 84%, 57%);
+    color: white;
+    transform: .5s;
+}
+
+/* Submit Button */
+.submit{
+    background-color: hsl(206, 94%, 87%);
+    color: black;
+    border: none;
+    transform: .5s;
+}
+
+.submit:hover{
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+}
 
 .hidden {
     display: none;
@@ -146,23 +178,6 @@ button:hover{
 }
 
 /* section 2 footer */
-.next{
-    background-color: hsl(213, 96%, 18%);
-    color: white;
-    text-align: center;
-    
-}
-
-.back{
-    color: black;
-    text-align: center;
-    border: none;
-}
-
-.back:hover{
-    background-color: hsl(354, 84%, 57%);
-    color: white;
-}
 
 .footer{
     display: flex;
@@ -207,4 +222,52 @@ button:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Step 4 container */
+.summary{
+    background-color: hsl(229, 24%, 87%);
+    border-radius: 15px;
+    padding: 1.5em;
+    width: 100%;
+}
+
+.top {
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.bottom {
+    margin-top: 1em;
+}
+
+.total{
+    margin: 1em;
+}
+
+.top ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-content: center;
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+.totalCash{
+    color: hsl(213, 96%, 18%);
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.change{
+    text-decoration: underline;
 }
