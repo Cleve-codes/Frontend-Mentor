@@ -170,3 +170,41 @@ button:hover{
     align-items: end;
     justify-content: space-between;
 }
+
+/* Step 3 */
+.step-3-container{
+    margin-left: 4em;
+    width: 100%;
+}
+
+.addonSelect{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.choice{
+    width: 100%;
+    min-height: 3.25em;
+    border-radius: 15px;
+    border: 1px solid hsl(213, 96%, 18%);
+    display: flex;
+    padding: 1.25em;
+    text-align: center;
+    place-content: center;
+    justify-content: space-between;
+}
+
+.specs, .check, .prize{
+    margin-top: 1em;
+}
+
+.specs{
+    text-align: left;
+}
+
+.prize, .check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
