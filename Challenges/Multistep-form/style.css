@@ -37,11 +37,13 @@ aside{
 
 .step{
     display: flex;
-    gap: 1em;
+    gap: 2em;
     margin-bottom: 1em;
     /* justify-content: center; */
     align-items: center;
 }
+
+
 
 .stepBtn{ 
     display: flex;
@@ -60,6 +62,7 @@ aside{
     transition: .5s;
     border: none;
     cursor: pointer;
+
 }
 
 /* //////////////////////////////////////////// */
@@ -92,19 +95,78 @@ input {
 }
 
 button{
-    width: 170px;
-    height: 50px;
+    min-width: 170px;
+    min-height: 50px;
     border-radius: 15px;
-    background-color: hsl(213, 96%, 18%);
     color: white;
     text-align: center;
-    margin-left: 70%;
     bottom: 0;
     right: 0;
-    align-items: right;
-    justify-content: flex-end;
 }
 
 button:hover{
     cursor: pointer;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+/* Step2 Container */
+.plans{
+    display: flex;
+    gap: 1em;
+}
+
+.plancontainer{
+    height: 170px;
+    width: 150px;
+    border-radius: 15px;
+    padding: 1em;
+    border: 1px solid hsl(231, 11%, 63%);
+}
+
+.plancontainer:hover{
+    border: 1px solid hsl(213, 96%, 18%);
+    cursor: pointer;
+}
+
+.step-2-container img{
+    width: 28px;
+    margin-bottom: 2.75em;
+}
+
+/* Toggle section */
+.subscriptionToggle{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+/* section 2 footer */
+.next{
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    text-align: center;
+    
+}
+
+.back{
+    color: black;
+    text-align: center;
+    border: none;
+}
+
+.back:hover{
+    background-color: hsl(354, 84%, 57%);
+    color: white;
+}
+
+.footer{
+    display: flex;
+    margin-top: 7em;
+    align-items: end;
+    justify-content: space-between;
 }

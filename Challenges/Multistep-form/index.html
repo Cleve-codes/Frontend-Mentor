@@ -8,7 +8,6 @@
   
   <title>Frontend Mentor | Multi-step form</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
@@ -16,6 +15,9 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- JS -->
+  <script src="index.js"></script>
 </head>
 <body>
   <main>
@@ -71,23 +73,73 @@
 
     <!-- Main Content-->
     <div class="main-content">
-      <div class="header">
-        <h2>Personal Info</h2>
-        <p>Please provide your name, email address and phone number.</p>
+      <!-- Step 1 Container -->
+      <div class="step1Container hidden">
+        <div class="header">
+          <h2>Personal Info</h2>
+          <p>Please provide your name, email address and phone number.</p>
+        </div>
+        <div>
+          <form action="">
+            <label for="name">Name</label>
+              <input type="text" name="" id="" placeholder="Cleve Momanyi" required>
+            <label for="email" >Email Address</label>
+              <input type="email" name="" id="" placeholder="clevemomanyi@gmail.com" required>
+            <label for="number">Phone Number</label>
+              <input type="tel" name="" id="" placeholder="0700164733" required>
+          </form>
+        </div>
+        <div class="btn">
+          <button class="next"><b>Next Step</b></button>
+        </div>
       </div>
-      <div>
-        <form action="">
-          <label for="name">Name</label>
-            <input type="text" name="" id="" placeholder="Cleve Momanyi" required>
-          <label for="email" >Email Address</label>
-            <input type="email" name="" id="" placeholder="clevemomanyi@gmail.com" required>
-          <label for="number">Phone Number</label>
-            <input type="tel" name="" id="" placeholder="0700164733" required>
-        </form>
+
+      <!-- Step 2 Container-->
+      <div class="step-2-container">
+        <!-- Head section -->
+        <div class="header">
+          <h2>Select your plan</h2>
+          <p>You have the option of monthly or yearly billing.</p>
+        </div>
+
+        <!-- Plans Section -->
+          <div class="plans">
+            <!-- Arcade -->
+            <div class="plancontainer arcade">
+              <img src="assets/images/icon-arcade.svg" alt="">
+              <h2><b>Arcade</b></h2>
+              <p>$9/mo</p>
+            </div>
+
+            <!-- Advanced -->
+            <div class="plancontainer advanced">
+              <img src="assets/images/icon-advanced.svg" alt="">
+              <h2><b>Advanced</b></h2>
+              <p>$12/mo</p>
+            </div>
+
+            <!-- Pro -->
+            <div class="plancontainer pro">
+              <img src="assets/images/icon-pro.svg" alt="">
+              <h2><b>Pro</b></h2>
+              <p>$15/mo</p>
+            </div>
+
+          </div>
+
+          <!-- Plan choice toggle -->
+          <div class="subscriptionToggle">
+            <i class="fa fa-toggle-on" aria-hidden="true"></i>
+          </div>
+         
+          <div class="footer">
+            <button class="back"><b>Go back</b></button>
+            <button class="next"><b>Next Step</b></button>
+          </div>
+          
       </div>
-      <div class="btn">
-        <button class="next"><b>Next Step</b></button>
-      </div>
+
+
     </div>
   </div>
   </main>
