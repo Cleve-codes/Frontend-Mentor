@@ -44,7 +44,6 @@ aside{
 }
 
 
-
 .stepBtn{ 
     display: flex;
     width: 2em;
@@ -55,6 +54,7 @@ aside{
     justify-content: center;
     align-items: center;
 }
+
 
 .active{
     background-color: hsl(206, 94%, 87%);

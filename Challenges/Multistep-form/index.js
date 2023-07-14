@@ -9,13 +9,63 @@ const btnSubmit = document.querySelector('.submit')
 const steps = document.querySelectorAll('.content')
 const stepBtn = document.querySelectorAll('.stepBtn')
 
+/////////////////////////////////////////////////////////////////
+// Function to show or hide active steps
+
+const showBtn = function(btnIndex){
+    stepBtn[btnIndex].classList.add('active');
+}
+
+const hideBtn = function(btnIndex){
+    stepBtn[btnIndex].classList.remove('active')
+}
+
+//Change Content based on clicking step button
+stepBtn.forEach((button, i) => {
+    button.addEventListener('click', function(e){
+        e.preventDefault();
+        
+        //Button not active
+        if(!button.classList.contains('active')){
+            // Check if the button is hidden
+            if(steps[i].classList.contains('hidden')){
+                steps[currentStep].classList.add('hidden')
+                steps[i].classList.remove('hidden')
+                stepBtn[i].classList.add('active');
+                // steps[i].classList.remove('hidden')
+                currentStep = i;
+            } 
+            else {
+                return;
+            }   
+        } 
+
+        // Button active
+        if(button.classList.contains('active')) {
+            // Step content hidden
+            if(steps[i].classList.contains('hidden')){
+                steps[currentStep].classList.add('hidden')
+                steps[i].classList.remove('hidden')
+                // steps[i].classList.remove('hidden')
+                currentStep = i;
+                
+            }
+            else{
+                return;
+            }
+        }
+        
+    })
+})
+
+//////////////////////////////////////////////////////////
+// Function to show or hide step content
 
 const showStep = function(stepIndex){
     if (stepIndex < 0 || stepIndex >= steps.length) {
         return; // Check for invalid step index
       }
       steps[stepIndex].classList.remove('hidden');
-      stepBtn[stepIndex].classList.toggle('active');
 }
 
 const hideStep = function(stepIndex){
@@ -23,11 +73,13 @@ const hideStep = function(stepIndex){
         return;
     }
     steps[stepIndex].classList.add('hidden');
-    stepBtn[stepIndex].classList.toggle('active');
 }
 
 // Current step index
 let currentStep = 0;
+
+
+showBtn(currentStep)
 
 // Go to next page feature
 btnNext.forEach((button)=>{
@@ -41,6 +93,7 @@ button.addEventListener('click', function(e) {
 
     // Show next step
     showStep(currentStep);
+    showBtn(currentStep);
 });
 })
 
@@ -50,12 +103,14 @@ btnBack.forEach((button) =>{
     button.addEventListener('click', function(e) {
         e.preventDefault();
         // Hide current step
+        hideBtn(currentStep)
         hideStep(currentStep);
     
         // Decrement current step index
         currentStep--;
     
         // Show previous step
+        showBtn(currentStep)
         showStep(currentStep);
     });
 })
