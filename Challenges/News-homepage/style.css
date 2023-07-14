@@ -17,12 +17,18 @@ header{
     display: flex;
     justify-content: space-between;
     font-size: 1.4em;
+   
+}
+
+header h1{
+    margin-bottom: 1em;
 }
 
 ul li {
     list-style-type: none;
     display: inline-block;
     margin-left: 1.4em;
+    color: hsl(236, 13%, 42%);
 }
 
 ul li:hover{
@@ -33,6 +39,8 @@ ul li:hover{
 span {
     font-size: 60px;
     font-weight: bolder;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 /* Main Content Section */
@@ -49,7 +57,7 @@ span {
 
 .left{
     min-width: 55%;
-    margin-right: 1em;
+    margin-right: 2.3em;
 }
 
 .left img{
@@ -87,6 +95,7 @@ span {
 
 .right h2:hover{
     color: hsl(35, 77%, 62%);
+    cursor: pointer;
 }
 
 .right p{
@@ -94,7 +103,8 @@ span {
 }
 
 hr{
-    margin-bottom: 1em;
+    margin-bottom: .5em;
+    opacity: .5;
 }
 
 
@@ -111,4 +121,26 @@ button{
 
 button:hover{
     background-color: hsl(240, 100%, 5%);
+    cursor: pointer;
+}
+
+
+/* Footer Section */
+.footer{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* images */
+.footer-img{
+    width: 70px;
+    height: 90px;
+}
+
+/* numberings */
+.numbering{
+    color: hsl(236, 13%, 42%);
+    font-size: 1.5em;
 }
