@@ -41,7 +41,7 @@ subscribeBtn.addEventListener('click', function(e){
         hide(primaryContainer)
         display(secondaryContainer)
     } else{
-        alert('Incorrect password. Try again')
+        alert('Incorrect email. Please Try again')
     }
         //Clear email input field
         inputEmail.value = ''
