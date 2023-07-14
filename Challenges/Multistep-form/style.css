@@ -56,14 +56,14 @@ aside{
     align-items: center;
 }
 
-.stepBtn:hover{
+.active{
     background-color: hsl(206, 94%, 87%);
     color: black;
     transition: .5s;
     border: none;
     cursor: pointer;
-
 }
+
 
 /* //////////////////////////////////////////// */
 /* Main content section */
