@@ -41,19 +41,6 @@ body {
     margin-top: 1em;
 }
 
-.divide {
-    margin-top: 2em;
-    width: 100%;
-    display: flex;
-    gap: 1em;
-}
-
-.divide img{
-    width:30%;
-    margin-left: 0;
-    
-}
-
 .position{
     display: flex;
     place-items: center;
