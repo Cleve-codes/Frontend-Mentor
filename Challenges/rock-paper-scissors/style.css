@@ -11,14 +11,14 @@ body{
 
 .score-board{
     border-radius: 15px;
-    border: 1px solid white;
+    border: .5px solid rgb(129, 125, 125);
     min-height: 150px;
     width: 750px;
     padding: 1.75em;
     display: flex;
     justify-content: space-between;
     margin-left: 30%;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 .board-head{
@@ -42,42 +42,122 @@ body{
 
 .selection{
     position: relative;
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
 }
 
 .connector{
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+   position: absolute;
+    margin-left: 42%;
+    margin-top: 4%;
     z-index: -1;
 }
 
+
+.select1{
+    margin-top: 2em;
+    display: flex;
+    gap: 12em;
+    justify-content: center;
+    place-items: center;
+    z-index: 2;
+    margin-bottom: 6em;
+}
+
 .select{
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    transform-origin: top-center;
+    /* position: relative; */
+    display: flex;
+    padding: 1em;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 2em;
+    z-index: 1;
+};
+
+
+
+.select img{
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: auto;
+}
+
+img:hover{
+    animation: shakeY 0.75s 1;
+    cursor: pointer;
+}
+
+/* Card 1 */
+.card1{  
+    border: .75em solid hsl(230, 89%, 65%);
+    transition: .75s;
+}
+.card1:hover{
+    box-shadow: 0 0 55px hsl(230, 89%, 65%);
+}
+
+/* card 2*/
+.card2{
+    border: .75em solid hsl(40, 84%, 53%);
+    transition: .75s;
+}
+.card2:hover{
+    box-shadow: 0 0 55px hsl(40, 84%, 53%);
+}
+
+/* card 3 */
+.card3{
+    border: .75em solid hsl(349, 70%, 56%);
+    transition: .75s;
+}
+.card3:hover{
+    box-shadow: 0 0 55px hsl(349, 70%, 56%);
 }
 
 
-.paper {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) rotate(-30deg);
-  }
-  
-  .rock {
-    top: 150px;
-    left: 30px;
-    transform: rotate(30deg);
-  }
-  
-  .scissors {
-    top: 150px;
-    right: 30px;
-    transform: rotate(-30deg);
+/* Rules Button */
+.rulesBtn{
+    margin-left: 85%;
+    margin-right: 5%;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 15px;
+    border: .5px solid white;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.rulesBtn:hover{
+    animation: shakeX 0.75s 1;
+    box-shadow: 0 0 10px white;
+    cursor: pointer;
+}
+
+/* Shake animation */
+@keyframes shakeY {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateY(-10px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateY(10px);
+    }
   }
 
+@keyframes shakeX {
+    0%, 100% {
+        transform: translateX(0);
+      }
+      10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+      }
+      20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+      }
+}
