@@ -15,9 +15,12 @@ const generateQuote = function(){
     .catch(err => console.log(err))
 }
 
+// Generate random quote 
 diceBtn.addEventListener('click', function(){
     generateQuote();
 })
+
+
 
 
 
