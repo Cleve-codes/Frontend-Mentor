@@ -1,38 +1,49 @@
 // Global Variables
-const selection = document.querySelector('.selection');
-const rules = document.querySelector('.rules');
-const primary = document.querySelector('.primary')
+const pages = document.querySelectorAll('.page');
+console.log(pages)
 
 const rulesBtn = document.querySelector('.rulesBtn');
 const closeBtn = document.querySelector('.close')
 
-let modalOpen = false;
+let activePage = 0;
 
 // Function to show rules
 const openModal = function(){
-    selection.classList.toggle('hidden');
-    rules.classList.toggle('hidden')
-    modalOpen = true;
+    // selection.classList.toggle('hidden');
+    // rules.classList.toggle('hidden')
+    // modalOpen = true;
+
+    pages.forEach(page => {
+        if(!page.classList.contains('hidden')){
+            pages[activePage].classList.add('hidden');
+            activePage+= 1;
+            pages[activePage].classList.add('hidden');
+            pages[2].classList.remove('hidden')
+        }
+    })
 }
 
 // Function to hide rules
 const closeModal = function(){
-    rules.classList.toggle('hidden');
-    selection.classList.toggle('hidden')
-    modalOpen = false;
+    // rules.classList.add('hidden');
+    // selection.classList.remove('hidden')
+    // resultSection.classList.remove('hidden')
+    // modalOpen = false;
+
+    pages.forEach(page => {
+        if(!page.classList.contains('hidden')){
+            pages[activePage].classList.add('hidden');
+            activePage-= 1;
+            pages[activePage].classList.add('hidden');
+            pages[2].classList.remove('hidden')
+        }
+    }) 
 }
 
 
 // EventListeners
 // Show Rules on rulesBtn click
-rulesBtn.addEventListener('click', function(){
-    if(!modalOpen) {
-        openModal()
-    }else {
-        closeModal()
-    }
-    body.classList.add('overlay')
-});
+rulesBtn.addEventListener('click', openModal);
 
 // Close modal on clicking close btn
 
@@ -48,4 +59,7 @@ window.addEventListener('keydown', function(e){
         }
 })
 
+window.addEventListener('change', function(){
+    console.log("I will detect changes, HA HA HA HAAA")
+})
 
