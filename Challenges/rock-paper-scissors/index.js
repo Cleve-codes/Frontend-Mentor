@@ -10,35 +10,41 @@ let modalOpen = false;
 
 // Function to show rules
 const openModal = function(){
-    selection.classList.add('hidden');
-    rules.classList.remove('hidden')
+    selection.classList.toggle('hidden');
+    rules.classList.toggle('hidden')
     modalOpen = true;
 }
 
 // Function to hide rules
 const closeModal = function(){
-    rules.classList.add('hidden');
-    selection.classList.remove('hidden')
+    rules.classList.toggle('hidden');
+    selection.classList.toggle('hidden')
     modalOpen = false;
 }
 
+
 // EventListeners
 // Show Rules on rulesBtn click
-
 rulesBtn.addEventListener('click', function(){
-    if(!modalOpen) openModal();
+    if(!modalOpen) {
+        openModal()
+    }else {
+        closeModal()
+    }
     body.classList.add('overlay')
 });
 
 // Close modal on clicking close btn
+
 closeBtn.addEventListener('click', function(){
     closeModal();
     primary.classList.remove('overlay');
 })
 
 // Close on pressing escape{
-if(!modalOpen){
     window.addEventListener('keydown', function(e){
-        if(e.key = 'Escape') closeModal();
+        if(!modalOpen){
+            if(e.key = 'Escape') closeModal();  
+        }
     })
-}
+

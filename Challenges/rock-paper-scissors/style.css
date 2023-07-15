@@ -150,6 +150,7 @@ body{
     font-size: 30px;
 }
 
+/* Close button */
 .top img{
     width: 25px;
     height: 25px;
@@ -157,9 +158,6 @@ body{
     margin-right: 1em;
 }
 
-.top img:hover{
-    animation: shakeY 1s 1;
-}
 
 .bottom{
     display: flex;
