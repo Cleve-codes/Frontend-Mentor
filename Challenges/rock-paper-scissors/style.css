@@ -9,6 +9,10 @@ body{
     color: whitesmoke;
 }
 
+.primary{
+    position: relative;
+}
+
 .score-board{
     border-radius: 15px;
     border: .5px solid rgb(129, 125, 125);
@@ -40,8 +44,11 @@ body{
     margin-right: 1em;
 }
 
+
+/* Card Selection */
 .selection{
     position: relative;
+    transition: 1s;
 }
 
 .connector{
@@ -83,7 +90,7 @@ body{
     height: auto;
 }
 
-img:hover{
+.select img:hover{
     animation: shakeY 0.75s 1;
     cursor: pointer;
 }
@@ -115,9 +122,51 @@ img:hover{
     box-shadow: 0 0 55px hsl(349, 70%, 56%);
 }
 
+/* /////////////////////////////////////////////// */
+/* Rules Container */
+.rules{  
+    padding: 1em;
+    background-color: white;
+    max-width: 400px;
+    margin-left: 40%;
+    margin-top: 5%;
+    border-radius: 15px;
+    transition: 1s;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2em;
+}
+
+.top h2{
+    margin-top: 1.5em;
+    margin-bottom: 2em;
+    color: hsl(270, 1%, 28%);
+    font-size: 30px;
+}
+
+.top img{
+    width: 25px;
+    height: 25px;
+    margin-top: 2.7em;
+    margin-right: 1em;
+}
+
+.top img:hover{
+    animation: shakeY 1s 1;
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Rules Button */
 .rulesBtn{
+    position: absolute;
     margin-left: 85%;
     margin-right: 5%;
     padding-left: 2em;
@@ -160,4 +209,15 @@ img:hover{
       20%, 40%, 60%, 80% {
         transform: translateX(10px);
       }
+}
+
+/* Hide elements */
+.hidden{
+    display: none;
+}
+
+/* Overlay */
+.overlay{
+    filter: blur(5px);
+    background-color: lightgray;
 }
