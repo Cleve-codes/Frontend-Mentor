@@ -42,9 +42,10 @@ closeBtn.addEventListener('click', function(){
 })
 
 // Close on pressing escape{
-    window.addEventListener('keydown', function(e){
+window.addEventListener('keydown', function(e){
         if(!modalOpen){
             if(e.key = 'Escape') closeModal();  
         }
-    })
+})
+
 
