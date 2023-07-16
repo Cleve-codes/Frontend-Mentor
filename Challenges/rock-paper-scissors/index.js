@@ -1,8 +1,15 @@
 // Global Variables
-const pages = document.querySelectorAll('.page');
+const pages = Array.from(document.querySelectorAll('.page'));
 const primary = document.querySelector('.primary');
 
-console.log(pages)
+const selection = document.querySelector('.selection');
+
+const select = Array.from(document.querySelectorAll('.img-choice'));
+console.log(select, typeof select)
+
+// const paper = document.querySelector('.paper');
+// const rock = document.querySelector('.rock');
+// const scissors = document.querySelector('.scissors');
 
 const rulesBtn = document.querySelector('.rulesBtn');
 const closeBtn = document.querySelector('.close');
@@ -10,6 +17,42 @@ const playAgainBtn = document.querySelector('.playAgainBtn');
 
 let activePage = 0;
 
+// Game functionality
+// Scissors BEATS Paper
+// Rock BEATS Scissors
+// Paper BEATS Rock
+
+
+selection.addEventListener('click', function(e){
+    const randomNumber = Math.floor(Math.random()* 3);
+    const randomPick = select[randomNumber];
+     console.log(randomPick)
+
+    if(e.target !== randomPick){
+        console.log(e.target)
+        if(e.target === select[0] && randomPick === select[1]){
+            // hidePage(pages[0]);
+            pages[0].style.display = 'none'
+            showPage(pages[1])
+            console.log('Paper')
+        }
+        else if(e.target === select[2] && randomPick === select[0]){
+            // hidePage(pages[0])
+            pages[0].style.display = 'none'
+            showPage(pages[1])
+            console.log('Scissors')
+        }
+        else if(e.target === select[1] && randomPick === select[2]){
+            // hidePage(pages[0]);
+            pages[0].style.display = 'none'
+            showPage(pages[1])
+            pages[0].classList.add('hidden');
+            pages[1].classList.remove('hidden')
+            console.log('rock')
+        }
+    }
+
+})
 
 //////////////////////////////////////////////////////////////////////
 // Function to show page
