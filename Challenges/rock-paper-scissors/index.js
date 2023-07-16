@@ -59,7 +59,5 @@ window.addEventListener('keydown', function(e){
         }
 })
 
-window.addEventListener('change', function(){
-    console.log("I will detect changes, HA HA HA HAAA")
-})
+
 

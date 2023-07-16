@@ -73,8 +73,8 @@ body{
     /* position: relative; */
     display: flex;
     padding: 1em;
-    height: 120px;
-    width: 120px;
+    height: 170px;
+    width: 170px;
     border-radius: 50%;
     background-color: white;
     margin: 2em;
@@ -97,8 +97,9 @@ body{
 
 /* Card 1 */
 .card1{  
-    border: .75em solid hsl(230, 89%, 65%);
+    border: 1.25em solid hsl(230, 89%, 65%);
     transition: .75s;
+    
 }
 .card1:hover{
     box-shadow: 0 0 55px hsl(230, 89%, 65%);
@@ -106,7 +107,8 @@ body{
 
 /* card 2*/
 .card2{
-    border: .75em solid hsl(40, 84%, 53%);
+    
+    border: 1.25em solid hsl(40, 84%, 53%);
     transition: .75s;
 }
 .card2:hover{
@@ -115,7 +117,7 @@ body{
 
 /* card 3 */
 .card3{
-    border: .75em solid hsl(349, 70%, 56%);
+    border: 1.25em solid hsl(349, 70%, 56%);
     transition: .75s;
 }
 .card3:hover{
@@ -167,15 +169,50 @@ body{
 
 /* Results DIsplay */
 .select2{
-    margin-top: 2em;
     display: flex;
     gap: 1em;
     justify-content: space-between;
-    margin-left: 27%;
-    margin-top: 10%;
-    width: 45%;
-    margin-bottom: 10%;
+    margin-left: 30%;
+    max-width: 40%;
+    height: 100%;
 }
+
+.select2 h2{
+    font-size: 1.25em;
+}
+
+.result{
+    margin-top: 5%;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2em;
+}
+
+.status{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .75em;
+}
+
+.status h2{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+/* Play Again Button */
+button{
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 15px;
+    font-size: 1.125em;
+    font-weight: bolder;
+    color: hsl(349, 70%, 56%);
+}
+
 
 /* Rules Button */
 .rulesBtn{
@@ -224,6 +261,35 @@ body{
       }
 }
 
+/* Glow animation */
+@keyframes glow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    20% {
+      box-shadow: 0 0 1em 2em hsl(237, 49%, 23%);
+    }
+    40% {
+        box-shadow: 0 0 4em 2em hsl(220, 47%, 15%);
+    }
+    60% {
+        box-shadow: 0 0 4em 2em hsl(210, 45%, 10%);
+    }
+    100% {
+      box-shadow: 0 0 6em 4em hsl(220, 47%, 15%);
+    }
+  }
+
+/* Winner Class */
+.winner{
+    animation: glow 1s infinite;
+}
+
+.loser{
+    animation: shakeX 1s 1.5;
+}
+
+
 /* Hide elements */
 .hidden{
     display: none;
@@ -234,3 +300,5 @@ body{
     filter: brightness(.5);
     
 }
+
+  
