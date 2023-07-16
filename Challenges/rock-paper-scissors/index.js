@@ -5,7 +5,6 @@ const primary = document.querySelector('.primary');
 const selection = document.querySelector('.selection');
 
 const select = Array.from(document.querySelectorAll('.img-choice'));
-console.log(select, typeof select)
 
 // const paper = document.querySelector('.paper');
 // const rock = document.querySelector('.rock');
@@ -23,33 +22,39 @@ let activePage = 0;
 // Paper BEATS Rock
 
 
-selection.addEventListener('click', function(e){
-    const randomNumber = Math.floor(Math.random()* 3);
-    const randomPick = select[randomNumber];
-     console.log(randomPick)
 
-    if(e.target !== randomPick){
-        console.log(e.target)
-        if(e.target === select[0] && randomPick === select[1]){
+selection.addEventListener('click', function(e){ 
+    // If clicked element is not same as random Pick
+    const randomNumber = Math.floor(Math.random()* 3);
+    console.log(randomNumber, "Random number")
+    const randomPick = select[randomNumber];
+    console.log(randomPick)
+
+     if(randomPick !== e.target){
+        console.log(e.target, "Event target")
+        if(e.target === select[0] && randomPick === select[1] || e.target === select[1] && randomPick === select[0]){
             // hidePage(pages[0]);
             pages[0].style.display = 'none'
             showPage(pages[1])
             console.log('Paper')
         }
-        else if(e.target === select[2] && randomPick === select[0]){
+      
+        if(e.target === select[1] && randomPick === select[2] || e.target === select[2] && randomPick === select[1]){
+            // hidePage(pages[0]);
+            pages[0].style.display = 'none'
+            showPage(pages[1])
+            console.log('rock')
+        }
+        else if(e.target === select[2] && randomPick === select[0] || e.target === select[0] && randomPick === select[2]){
             // hidePage(pages[0])
             pages[0].style.display = 'none'
             showPage(pages[1])
             console.log('Scissors')
-        }
-        else if(e.target === select[1] && randomPick === select[2]){
-            // hidePage(pages[0]);
-            pages[0].style.display = 'none'
-            showPage(pages[1])
-            pages[0].classList.add('hidden');
-            pages[1].classList.remove('hidden')
-            console.log('rock')
-        }
+        } 
+    } else{
+        pages[0].style.display = 'none'
+        showPage(pages[1])
+        console.log("Draw")
     }
 
 })
