@@ -3,61 +3,54 @@ const pages = document.querySelectorAll('.page');
 console.log(pages)
 
 const rulesBtn = document.querySelector('.rulesBtn');
-const closeBtn = document.querySelector('.close')
+const closeBtn = document.querySelector('.close');
+const playAgainBtn = document.querySelector('.playAgainBtn');
 
 let activePage = 0;
 
-// Function to show rules
+////////////////////////////////////////////////////////////////////
+// Function to open rules modal
 const openModal = function(){
-    // selection.classList.toggle('hidden');
-    // rules.classList.toggle('hidden')
-    // modalOpen = true;
-
     pages.forEach(page => {
         if(!page.classList.contains('hidden')){
-            pages[activePage].classList.add('hidden');
-            activePage+= 1;
-            pages[activePage].classList.add('hidden');
-            pages[2].classList.remove('hidden')
+            hidePage(page);
+            showPage(pages[2])
         }
     })
 }
 
-// Function to hide rules
+// Function to hide rules modal
 const closeModal = function(){
-    // rules.classList.add('hidden');
-    // selection.classList.remove('hidden')
-    // resultSection.classList.remove('hidden')
-    // modalOpen = false;
-
-    pages.forEach(page => {
-        if(!page.classList.contains('hidden')){
-            pages[activePage].classList.add('hidden');
-            activePage-= 1;
-            pages[activePage].classList.add('hidden');
-            pages[2].classList.remove('hidden')
-        }
-    }) 
+    hidePage(pages[2]);
+    showPage(pages[0])
 }
 
+//////////////////////////////////////////////////////////////////////
+// Function to show page
+const showPage = function(page){
+    page.classList.remove('hidden')
+}
 
+// Function to hide page
+const hidePage = function(page){
+    page.classList.add('hidden')
+}
+
+///////////////////////////////////////////////////////////////////////
 // EventListeners
 // Show Rules on rulesBtn click
-rulesBtn.addEventListener('click', openModal);
+rulesBtn.addEventListener('click', function(){
+    showPage(pages[2]);
+    hidePage(pages[0])
+    rulesBtn.classList.add('hidden')
+});
 
 // Close modal on clicking close btn
 
 closeBtn.addEventListener('click', function(){
-    closeModal();
-    primary.classList.remove('overlay');
+    hidePage(pages[0])
 })
 
-// Close on pressing escape{
-window.addEventListener('keydown', function(e){
-        if(!modalOpen){
-            if(e.key = 'Escape') closeModal();  
-        }
-})
 
 
 
