@@ -98,8 +98,7 @@ body{
 /* Card 1 */
 .card1{  
     border: 1.25em solid hsl(230, 89%, 65%);
-    transition: .75s;
-    
+    transition: .75s; 
 }
 .card1:hover{
     box-shadow: 0 0 55px hsl(230, 89%, 65%);
@@ -107,7 +106,6 @@ body{
 
 /* card 2*/
 .card2{
-    
     border: 1.25em solid hsl(40, 84%, 53%);
     transition: .75s;
 }

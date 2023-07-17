@@ -1,7 +1,5 @@
 // Global Variables
 const pages = Array.from(document.querySelectorAll('.page'));
-console.log(pages)
-console.log(pages[0], pages[1], pages[2])
 const primary = document.querySelector('.primary');
 
 const selection = document.querySelector('.selection');
@@ -18,12 +16,18 @@ let activePage = 0;
 // Rock BEATS Scissors
 // Paper BEATS Rock
 
+let winner = ''; 
+let loser = '';
 
-
+//////////////////////////////////////////////////////////////////////////////////////
+// Version 1
 selection.addEventListener('click', function(e){ 
     // If clicked element is not same as random Pick
     const randomNumber = Math.floor(Math.random()* 3);
     const randomPick = select[randomNumber];
+
+    const user = document.querySelector('.user');
+    const house = document.querySelector('.house')
    
 
      if(randomPick !== e.target){
@@ -32,29 +36,68 @@ selection.addEventListener('click', function(e){
             // hidePage(pages[0]);
             pages[0].style.display = 'none'
             showPage(pages[1])
-            hideBtn.style.display = 'none'
-           
+            
+          let htmlMarkupW = `<div class="select card1">
+                                <img src="images/icon-paper.svg" alt="" class="img-choice">
+                            </div>`
+
+            let htmlMarkupL = `<div class="select card1">
+                                    <img src="images/icon-paper.svg" alt="" class="img-choice">
+                                </div>`
+
+            user.innerHTML = htmlMarkupW;
+            house.innerHTML = htmlMarkupL;
         }
       
         if(e.target === select[1] && randomPick === select[2] || e.target === select[2] && randomPick === select[1]){
             // hidePage(pages[0]);
             pages[0].style.display = 'none'
             showPage(pages[1])
-            hideBtn.style.display = 'none'
-          
+           
+            let htmlMarkupW = `<div class="select card1">
+                            <img src="images/icon-paper.svg" alt="" class="img-choice">
+                        </div>`
+
+            let htmlMarkupL = `<div class="select card1">
+                                <img src="images/icon-paper.svg" alt="" class="img-choice">
+                            </div>`
+
+            user.innerHTML = htmlMarkupW;
+            house.innerHTML = htmlMarkupL; 
+           
         }
         else if(e.target === select[2] && randomPick === select[0] || e.target === select[0] && randomPick === select[2]){
             // hidePage(pages[0])
             pages[0].style.display = 'none'
             showPage(pages[1])
-            hideBtn.style.display = 'none'
-          
+           
+            let htmlMarkupW = `<div class="select card1">
+                                <img src="images/icon-paper.svg" alt="" class="img-choice">
+                            </div>`
+
+            let htmlMarkupL = `<div class="select card1">
+                                    <img src="images/icon-paper.svg" alt="" class="img-choice">
+                                </div>`
+
+            user.innerHTML = htmlMarkupW;
+            house.innerHTML = htmlMarkupL;
+         
         } 
     } else{
         pages[0].style.display = 'none'
         showPage(pages[1])
-        hideBtn.style.display = 'none'
         
+    
+        let htmlMarkupW = `<div class="select card1">
+                                <img src="images/icon-paper.svg" alt="" class="img-choice">
+                            </div>`
+
+            let htmlMarkupL = `<div class="select card1">
+                                    <img src="images/icon-paper.svg" alt="" class="img-choice">
+                                </div>`
+
+        user.innerHTML = htmlMarkupW;
+        house.innerHTML = htmlMarkupL;
     }
 
 })
@@ -123,7 +166,7 @@ playAgainBtn.addEventListener('click', function(){
     pages[0].style.display = 'block'
     hidePage(pages[1]);
     hidePage(pages[2])
-    showBtn()
+    hideBtn()
     console.log(pages)
 })
 
