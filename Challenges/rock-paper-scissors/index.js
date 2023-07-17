@@ -12,10 +12,12 @@ const playAgainBtn = document.querySelector(".playAgain-btn");
 
 const user = document.querySelector(".user");
 const house = document.querySelector(".house");
+const userScore = document.querySelector(".score-value");
 
 const cards = ["card1", "card2", "card3"];
 
-let activePage = 0;
+let score = 0;
+userScore.textContent = score;
 
 // Game functionality
 // Scissors BEATS Paper
@@ -105,30 +107,88 @@ playAgainBtn.addEventListener("click", function () {
   console.log(pages);
 });
 
+// // Function to handle winner
+// const handleWinner = (userChoice, randomNumber) => {
+//   let htmlMarkupW = `<div class="select ${cards[userChoice]}">
+//                           <img src="${select[userChoice].src}" alt="" class="img-choice">
+//                         </div>`;
+//   let htmlMarkupL = `<div class="select ${cards[randomNumber]}">
+//                           <img src="${select[randomNumber].src}" alt="" class="img-choice">
+//                         </div>`;
+
+//   if (userChoice === randomNumber) {
+//     message.innerText = "DRAW!";
+//     user.innerHTML = htmlMarkupL;
+//     house.innerHTML = htmlMarkupL;
+//     updateScores();
+//   } else if (
+//     (userChoice === 0 && randomNumber === 1) ||
+//     (userChoice === 1 && randomNumber === 2) ||
+//     (userChoice === 2 && randomNumber === 0)
+//   ) {
+//     message.innerText = "You Win";
+//     user.innerHTML = htmlMarkupW;
+//     house.innerHTML = htmlMarkupL;
+//     score++;
+//     updateScores();
+//   } else {
+//     message.innerText = "You Lose";
+//     user.innerHTML = htmlMarkupW;
+//     house.innerHTML = htmlMarkupL;
+//     updateScores();
+//   }
+// };
+
 // Function to handle winner
 const handleWinner = (userChoice, randomNumber) => {
-  let htmlMarkupW = `<div class="select ${cards[userChoice]}">
-                          <img src="${select[userChoice].src}" alt="" class="img-choice">
-                        </div>`;
-  let htmlMarkupL = `<div class="select ${cards[randomNumber]}">
-                          <img src="${select[randomNumber].src}" alt="" class="img-choice">
-                        </div>`;
+  const userElement = document.createElement("div");
+  userElement.classList.add("select", cards[userChoice]);
+  const userImage = document.createElement("img");
+  userImage.src = select[userChoice].src;
+  userImage.alt = "";
+  userImage.classList.add("img-choice");
+  userElement.appendChild(userImage);
+
+  const houseElement = document.createElement("div");
+  houseElement.classList.add("select", cards[randomNumber]);
+  const houseImage = document.createElement("img");
+  houseImage.src = select[randomNumber].src;
+  houseImage.alt = "";
+  houseImage.classList.add("img-choice");
+  houseElement.appendChild(houseImage);
+
+  user.innerHTML = "";
+  house.innerHTML = "";
 
   if (userChoice === randomNumber) {
     message.innerText = "DRAW!";
-    user.innerHTML = htmlMarkupL;
-    house.innerHTML = htmlMarkupL;
+    user.appendChild(userElement);
+    house.appendChild(houseElement);
+    updateScores();
   } else if (
     (userChoice === 0 && randomNumber === 1) ||
     (userChoice === 1 && randomNumber === 2) ||
     (userChoice === 2 && randomNumber === 0)
   ) {
     message.innerText = "You Win";
-    user.innerHTML = htmlMarkupW;
-    house.innerHTML = htmlMarkupL;
+    user.appendChild(userElement);
+    house.appendChild(houseElement);
+    userElement.classList.add("winner");
+    houseElement.classList.add("loser");
+    score++;
+    updateScores();
   } else {
     message.innerText = "You Lose";
-    user.innerHTML = htmlMarkupW;
-    house.innerHTML = htmlMarkupL;
+    user.appendChild(userElement);
+    house.appendChild(houseElement);
+    userElement.classList.add("loser");
+    houseElement.classList.add("winner");
+    updateScores();
   }
+};
+
+///////////////////////////////////////////////////////////////////////
+// Function to update scores
+const updateScores = function () {
+  userScore.textContent = score;
 };
