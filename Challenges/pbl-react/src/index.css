@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(30, 38%, 92%);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container {
+  max-width: 700px;
+  border-radius: 10px;
+  display: flex;
+  margin-left: 35%;
+  margin-top: 10%;
+  justify-content: space-between;
+  gap: 1.5em;
+  background-color: white;
+}
+
+img {
+  width: 45%;
+  max-height: 450px;
+  margin: 0.1em;
+  border-radius: 5px;
+}
+
+h1 {
+  color: hsl(158, 36%, 37%);
+}
+
+.pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.new-price {
+  font-size: 2.25em;
+  color: hsl(158, 36%, 37%);
+}
+
+.old-price {
+  color: darkgrey;
+}
+
+button {
+  background-color: hsl(158, 36%, 37%);
+  color: white;
+  width: 85%;
+  padding: 1em;
+  border-radius: 15px;
+  margin-top: 2em;
+  margin-left: 2em;
+}
+
+button:hover {
+  background-color: hsl(212, 21%, 14%);
+  color: white;
+}
