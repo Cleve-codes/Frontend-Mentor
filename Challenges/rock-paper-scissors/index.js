@@ -98,7 +98,6 @@ document.addEventListener("keydown", function (e) {
 
 //////////////////////////////////////////////////////////////////
 // Play Again button
-
 playAgainBtn.addEventListener("click", function () {
   pages[0].style.display = "block";
   hidePage(pages[1]);
@@ -107,65 +106,42 @@ playAgainBtn.addEventListener("click", function () {
   console.log(pages);
 });
 
-// // Function to handle winner
-// const handleWinner = (userChoice, randomNumber) => {
-//   let htmlMarkupW = `<div class="select ${cards[userChoice]}">
-//                           <img src="${select[userChoice].src}" alt="" class="img-choice">
-//                         </div>`;
-//   let htmlMarkupL = `<div class="select ${cards[randomNumber]}">
-//                           <img src="${select[randomNumber].src}" alt="" class="img-choice">
-//                         </div>`;
-
-//   if (userChoice === randomNumber) {
-//     message.innerText = "DRAW!";
-//     user.innerHTML = htmlMarkupL;
-//     house.innerHTML = htmlMarkupL;
-//     updateScores();
-//   } else if (
-//     (userChoice === 0 && randomNumber === 1) ||
-//     (userChoice === 1 && randomNumber === 2) ||
-//     (userChoice === 2 && randomNumber === 0)
-//   ) {
-//     message.innerText = "You Win";
-//     user.innerHTML = htmlMarkupW;
-//     house.innerHTML = htmlMarkupL;
-//     score++;
-//     updateScores();
-//   } else {
-//     message.innerText = "You Lose";
-//     user.innerHTML = htmlMarkupW;
-//     house.innerHTML = htmlMarkupL;
-//     updateScores();
-//   }
-// };
-
 // Function to handle winner
 const handleWinner = (userChoice, randomNumber) => {
+  // Create User choice element
   const userElement = document.createElement("div");
   userElement.classList.add("select", cards[userChoice]);
+  // Clicked image
   const userImage = document.createElement("img");
   userImage.src = select[userChoice].src;
   userImage.alt = "";
   userImage.classList.add("img-choice");
   userElement.appendChild(userImage);
 
+  // Create PC choice element
   const houseElement = document.createElement("div");
   houseElement.classList.add("select", cards[randomNumber]);
+  // Create a random selection for the PC
   const houseImage = document.createElement("img");
   houseImage.src = select[randomNumber].src;
   houseImage.alt = "";
   houseImage.classList.add("img-choice");
   houseElement.appendChild(houseImage);
 
+  // Update the user and Pc elements
   user.innerHTML = "";
   house.innerHTML = "";
 
+  // Draw if both selections match
   if (userChoice === randomNumber) {
     message.innerText = "DRAW!";
     user.appendChild(userElement);
     house.appendChild(houseElement);
+    userElement.classList.add("loser");
+    houseElement.classList.add("loser");
     updateScores();
   } else if (
+    // Winning instance
     (userChoice === 0 && randomNumber === 1) ||
     (userChoice === 1 && randomNumber === 2) ||
     (userChoice === 2 && randomNumber === 0)
@@ -178,6 +154,7 @@ const handleWinner = (userChoice, randomNumber) => {
     score++;
     updateScores();
   } else {
+    // Losing instance
     message.innerText = "You Lose";
     user.appendChild(userElement);
     house.appendChild(houseElement);
@@ -192,3 +169,14 @@ const handleWinner = (userChoice, randomNumber) => {
 const updateScores = function () {
   userScore.textContent = score;
 };
+
+const wueh = () => {
+  console.log("Leo wameniweza aisee");
+};
+
+const kimeniramba = () => {
+  console.log("Kimeniramba we mzee");
+};
+
+wueh();
+kimeniramba();
