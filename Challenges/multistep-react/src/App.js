@@ -1,25 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+const steps = [
+  {
+    value: 1,
+    step: "STEP 1",
+    content: "Your Info",
+  },
+  {
+    value: 2,
+    step: "STEP 2",
+    content: "Select Plan",
+  },
+  {
+    value: 3,
+    step: "STEP 1",
+    content: "ADD-ONS",
+  },
+  {
+    value: 4,
+    step: "STEP 4",
+    content: "Summary",
+  },
+];
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <Aside />
+        <Content />
+      </div>
     </div>
   );
 }
 
-export default App;
+function Aside() {
+  return (
+    <div className="aside">
+      <Item
+        value={steps[0].value}
+        step={steps[0].step}
+        content={steps[0].step}
+      />
+      <Item
+        value={steps[1].value}
+        step={steps[1].step}
+        content={steps[1].step}
+      />
+      <Item
+        value={steps[2].value}
+        step={steps[2].step}
+        content={steps[2].step}
+      />
+      <Item
+        value={steps[3].value}
+        step={steps[3].step}
+        content={steps[3].step}
+      />
+    </div>
+  );
+}
+
+function Item({ value, step, content }) {
+  return (
+    <div>
+      <span>{value}</span>
+      <span>{step}</span>
+      <span>{content}</span>
+    </div>
+  );
+}
+
+function Content() {}
