@@ -1,3 +1,18 @@
+const toDoList = [
+  {
+    task: "Code",
+    id: 1,
+  },
+  {
+    task: "Eat",
+    id: 2,
+  },
+  {
+    task: "Sleep",
+    id: 3,
+  },
+];
+
 export default function TodoWrapper() {
   return (
     <div className="TodoWrapper">
@@ -5,10 +20,14 @@ export default function TodoWrapper() {
         <input type="text" placeholder="Input task..." className="todo-input" />
         <button className="todo-btn">Add</button>
       </form>
-      <div className="Todo">
-        <span>☑️</span>
-        <span>Code for 5 hours</span>
-        <span>🚮</span>
+      <div>
+        {toDoList.map((item) => (
+          <div key={item.id} className="Todo">
+            <span>☑️</span>
+            {item.task}
+            <span>🚮</span>
+          </div>
+        ))}
       </div>
     </div>
   );
