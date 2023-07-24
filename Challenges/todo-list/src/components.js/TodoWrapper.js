@@ -1,31 +1,17 @@
 import { useState } from "react";
 
-const toDoList = [
-  {
-    task: "Code",
-    id: 1,
-  },
-  {
-    task: "Eat",
-    id: 2,
-  },
-  {
-    task: "Sleep",
-    id: 3,
-  },
-];
-
 export default function TodoWrapper() {
   const [tasks, setTask] = useState([]);
   const [todo, setTodo] = useState("");
 
   function handleAddTask(e) {
     e.preventDefault();
-    if (todo.trim === "") return;
+    if (todo.trim() === "") return;
 
     const newTask = {
       task: todo,
       id: crypto.randomUUID(),
+      completed: false,
     };
     setTask((tasks) => [...tasks, newTask]);
     setTodo("");
@@ -56,14 +42,30 @@ function TodoForm({ onAddTask, todo, setTodo }) {
   );
 }
 
-function Todo({ tasks }) {
+function Todo({ tasks, setTask }) {
+  function handleTaskComplete(id) {
+    setTask((tasks) =>
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
+  }
+
   return (
     <div>
       {tasks.map((item) => (
-        <div key={item.id} className="Todo">
-          <input type="checkbox" className="checkbox" />
+        <div
+          key={item.id}
+          className={`Todo ${item.completed ? "completed" : ""}`}
+        >
+          <input
+            type="checkbox"
+            className="checkbox"
+            checked={item.completed}
+            onChange={() => handleTaskComplete(item.id)}
+          />
           {item.task}
-          <span>🚮</span>
+          <span>❌</span>
         </div>
       ))}
     </div>
