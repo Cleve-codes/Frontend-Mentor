@@ -45,11 +45,16 @@ export default function App() {
     setNotes((initialNotes) => [...initialNotes, newNote]);
   };
 
+  const deleteNote = (id) => {
+    setNotes((notes) => notes.filter((note) => note.id !== id));
+    console.log("clicked");
+  };
+
   return (
     <div className="container">
       <Header />
       <Search />
-      <NotesList notes={notes} onAddNote={addNote} />
+      <NotesList notes={notes} onAddNote={addNote} onDeleteNote={deleteNote} />
     </div>
   );
 }

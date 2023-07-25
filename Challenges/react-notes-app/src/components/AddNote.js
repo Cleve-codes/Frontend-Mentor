@@ -5,7 +5,8 @@ const AddNote = ({ onAddNote }) => {
   const characterLimit = 200;
 
   const handleChange = (e) => {
-    if (characterLimit - e.target.value.length >= 0) setNoteText(e.value.text);
+    if (characterLimit - e.target.value.length >= 0)
+      setNoteText(e.target.value);
   };
 
   const handleSaveNote = () => {

@@ -1,10 +1,10 @@
-const Note = ({ id, text, date }) => {
+const Note = ({ id, text, date, onDeleteNote }) => {
   return (
     <div className="note">
       <p>{text}</p>
       <div className="note-footer">
         <small>{date}</small>
-        <span>🚮</span>
+        <span onClick={() => onDeleteNote(id)}>🚮</span>
       </div>
     </div>
   );
