@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import Header from "./components/Header";
 import Search from "./components/Search";
@@ -11,10 +12,21 @@ export default function App() {
   const [searchNote, setSearchNote] = useState("");
   const [darkMode, setDarkMode] = useState(false);
 
+  useEffect(() => {
+    const savedNotes = JSON.parse(localStorage.getItem("react-notes-app-data"));
+    if (savedNotes) {
+      setNotes(savedNotes);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("react-notes-app-data", JSON.stringify(notes));
+  }, [notes]);
+
   const addNote = (text) => {
     const newNote = {
       text,
-      id: crypto.randomUUID(),
+      id: uuidv4,
       date: new Date().toLocaleDateString(),
     };
 
