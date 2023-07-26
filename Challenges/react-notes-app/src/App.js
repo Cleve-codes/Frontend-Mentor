@@ -8,6 +8,7 @@ const initialNotes = [];
 
 export default function App() {
   const [notes, setNotes] = useState(initialNotes);
+  const [searchNote, setSearchNote] = useState("");
 
   const addNote = (text) => {
     const newNote = {
@@ -27,8 +28,14 @@ export default function App() {
   return (
     <div className="container">
       <Header />
-      <Search />
-      <NotesList notes={notes} onAddNote={addNote} onDeleteNote={deleteNote} />
+      <Search handleSearchNote={setSearchNote} searchNote={searchNote} />
+      <NotesList
+        notes={notes.filter((note) =>
+          note.text.toLowerCase().includes(searchNote)
+        )}
+        onAddNote={addNote}
+        onDeleteNote={deleteNote}
+      />
     </div>
   );
 }

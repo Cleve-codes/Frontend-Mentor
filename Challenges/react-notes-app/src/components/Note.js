@@ -4,7 +4,7 @@ const Note = ({ id, text, date, onDeleteNote }) => {
       <p>{text}</p>
       <div className="note-footer">
         <small>{date}</small>
-        <span className="search-icon" onClick={() => onDeleteNote(id)}>
+        <span className="delete-icon" onClick={() => onDeleteNote(id)}>
           🚮
         </span>
       </div>
