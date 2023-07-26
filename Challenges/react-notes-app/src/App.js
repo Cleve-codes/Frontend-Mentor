@@ -4,33 +4,7 @@ import Header from "./components/Header";
 import Search from "./components/Search";
 import NotesList from "./components/NotesList";
 
-const initialNotes = [
-  {
-    text: "Wagwan! This is my first bloodclot note😎",
-    id: crypto.randomUUID(),
-    date: new Date().toLocaleDateString(),
-  },
-  {
-    text: "Wagwan! This is my first bloodclot note😎",
-    id: crypto.randomUUID(),
-    date: new Date().toLocaleDateString(),
-  },
-  {
-    text: "Wagwan! This is my first bloodclot note😎",
-    id: crypto.randomUUID(),
-    date: new Date().toLocaleDateString(),
-  },
-  {
-    text: "Wagwan! This is my first bloodclot note😎",
-    id: crypto.randomUUID(),
-    date: new Date().toLocaleDateString(),
-  },
-  {
-    text: "Wagwan! This is my first bloodclot note😎",
-    id: crypto.randomUUID(),
-    date: new Date().toLocaleDateString(),
-  },
-];
+const initialNotes = [];
 
 export default function App() {
   const [notes, setNotes] = useState(initialNotes);
