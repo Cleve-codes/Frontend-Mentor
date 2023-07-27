@@ -26,7 +26,7 @@ export default function App() {
   const addNote = (text) => {
     const newNote = {
       text,
-      id: uuidv4,
+      id: uuidv4(),
       date: new Date().toLocaleDateString(),
     };
 
