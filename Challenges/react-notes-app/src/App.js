@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 import Header from "./components/Header";
 import Search from "./components/Search";
@@ -26,7 +25,7 @@ export default function App() {
   const addNote = (text) => {
     const newNote = {
       text,
-      id: uuidv4(),
+      id: crypto.randomUUID(),
       date: new Date().toLocaleDateString(),
     };
 
@@ -35,7 +34,7 @@ export default function App() {
 
   const deleteNote = (id) => {
     setNotes((notes) => notes.filter((note) => note.id !== id));
-    console.log("clicked");
+    // console.log("clicked");
   };
 
   return (
