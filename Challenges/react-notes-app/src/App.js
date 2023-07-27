@@ -39,7 +39,7 @@ export default function App() {
   };
 
   return (
-    <div className={darkMode && `dark-mode`}>
+    <div className={darkMode ? `dark-mode` : ""}>
       <div className="container">
         <Header handleToggleDarkMode={setDarkMode} darkMode={darkMode} />
         <Search handleSearchNote={setSearchNote} searchNote={searchNote} />
