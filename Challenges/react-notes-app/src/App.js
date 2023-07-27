@@ -12,14 +12,18 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    const savedNotes = JSON.parse(localStorage.getItem("react-notes-app-data"));
+    const savedNotes = JSON.parse(
+      window.localStorage.getItem("react-notes-app-data")
+    );
     if (savedNotes) {
       setNotes(savedNotes);
+      console.log(savedNotes);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("react-notes-app-data", JSON.stringify(notes));
+    window.localStorage.setItem("react-notes-app-data", JSON.stringify(notes));
+    console.log("notes", notes);
   }, [notes]);
 
   const addNote = (text) => {
