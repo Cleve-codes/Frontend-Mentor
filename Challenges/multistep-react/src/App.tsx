@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "typescript"
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -7,6 +8,7 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
+
 
 const { Header, Sider, Content } = Layout;
 
@@ -28,17 +30,17 @@ const App: React.FC = () => {
             {
               key: "1",
               icon: <UserOutlined />,
-              label: "nav 1",
+              label: "My Account",
             },
             {
               key: "2",
               icon: <VideoCameraOutlined />,
-              label: "nav 2",
+              label: "Videos",
             },
             {
               key: "3",
               icon: <UploadOutlined />,
-              label: "nav 3",
+              label: "Downloads",
             },
           ]}
         />
@@ -55,6 +57,7 @@ const App: React.FC = () => {
               height: 64,
             }}
           />
+          
         </Header>
         <Content
           style={{
